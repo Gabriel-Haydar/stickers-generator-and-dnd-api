@@ -26,11 +26,11 @@ public class App {
         for (int i = 0; i < 4; i++) {
 
             Content content = contents.get(i);
-            System.out.println(content.getTitle() + ". Insira um subtítulo:");
+            System.out.println("Title: " + content.getTitle() + ". Add a subtitle for sticker:");
             String subtitle = scanner.nextLine();
 
             InputStream inputStream = new URL(content.getUrlImage()).openStream();
-            String fileName = "saida/" + content.getTitle() + ".png";
+            String fileName = "output/" + content.getTitle() + ".png";
 
             generator.create(inputStream, fileName, subtitle, "Arial");
             System.out.println();
